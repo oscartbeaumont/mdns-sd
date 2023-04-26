@@ -243,7 +243,7 @@ impl ServiceInfo {
     }
 
     /// Insert `addr` into service info addresses.
-    pub(crate) fn insert_ipv4addr(&mut self, addr: Ipv4Addr) {
+    pub fn insert_ipv4addr(&mut self, addr: Ipv4Addr) {
         self.addresses.insert(addr);
     }
 
