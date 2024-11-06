@@ -611,6 +611,8 @@ impl ServiceDaemon {
     fn exec_command(zc: &mut Zeroconf, command: Command, repeating: bool) {
         match command {
             Command::Browse(ty, next_delay, listener) => {
+                zc.cache = DnsCache::new(); // TODO: This has large implications
+
                 zc.exec_command_browse(repeating, ty, next_delay, listener);
             }
 
